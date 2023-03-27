@@ -12,7 +12,7 @@ from RiZoeLX import res_grps, res_devs
 from RiZoeLX.functions import start_spam, start_dspam, start_pspam
 
 
-@Client.on_message(filters.user(Sudos) & filters.command(["delayspam"], prefixes=handler))
+@Client.on_message(filters.command(["delayspam"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["delayspam"], prefixes=handler))
 async def delayspam(SpamX: Client, e: Message): 
     usage = spam_usage.delayspam
@@ -35,7 +35,7 @@ async def delayspam(SpamX: Client, e: Message):
              pass
 
 
-@Client.on_message(filters.user(Sudos) & filters.command(["pspam", "pornspam"], prefixes=handler))
+@Client.on_message(filters.command(["pspam", "pornspam"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["pspam", "pornspam"], prefixes=handler))
 async def pornspam(SpamX: Client, e: Message):
     args = e.text.split(" ", 1)[1].split(" ", 1)
@@ -53,7 +53,7 @@ async def pornspam(SpamX: Client, e: Message):
          await e.reply_text("Gime Counts")
 
 
-@Client.on_message(filters.user(Sudos) & filters.command(["spam", "bigspam"], prefixes=handler))
+@Client.on_message(filters.command(["spam", "bigspam"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["spam", "bigspam"], prefixes=handler))
 async def justspam(SpamX: Client, e: Message):
     usage = spam_usage.spam
@@ -72,7 +72,7 @@ async def justspam(SpamX: Client, e: Message):
              print(a)
              pass
 
-@Client.on_message(filters.user(Sudos) & filters.command(["hang"], prefixes=handler))
+@Client.on_message(filters.command(["hang"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["hang"], prefixes=handler))
 async def hang(SpamX: Client, e: Message): 
     counts = e.text[5:]
