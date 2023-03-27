@@ -67,7 +67,7 @@ def get_text(message: Message) -> [None, str]:
     else:
         return None
 
-@Client.on_message(filters.user(Sudos) & filters.command(["tg", "telegraph", "tm", "tgt"], prefixes=handler))
+@Client.on_message(filters.command(["tg", "telegraph", "tm", "tgt"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["tg", "telegraph", "tm", "tgt"], prefixes=handler))
 async def _telegraph(SpamX: Client, message: Message):
     hm = await message.reply_text("`Processing . . .`")
