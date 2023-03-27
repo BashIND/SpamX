@@ -13,7 +13,7 @@ from RiZoeLX.functions import user_only, start_raid
 
 from SpamX.database import raid_db
 
-@Client.on_message(filters.user(Sudos) & filters.command(["raid"], prefixes=handler))
+@Client.on_message(filters.command(["raid"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["raid"], prefixes=handler))
 async def raid(SpamX: Client, e: Message):
       """ Start Raid """
@@ -63,7 +63,7 @@ async def raid(SpamX: Client, e: Message):
 
 RUSERs = []
 
-@Client.on_message(filters.user(Sudos) & filters.command(["rraid", "replyraid"], prefixes=handler))
+@Client.on_message(filters.command(["rraid", "replyraid"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["rraid", "replyraid"], prefixes=handler))
 async def rraid(SpamX: Client, e: Message):
       global RUSERs
@@ -91,7 +91,7 @@ async def rraid(SpamX: Client, e: Message):
              pass
 
 
-@Client.on_message(filters.user(Sudos) & filters.command(["draid", "dreplyraid"], prefixes=handler))
+@Client.on_message(filters.command(["draid", "dreplyraid"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["draid", "dreplyraid"], prefixes=handler))
 async def draid(SpamX: Client, e: Message):
       global RUSERs
