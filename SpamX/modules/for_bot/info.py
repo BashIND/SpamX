@@ -11,7 +11,7 @@ from RiZoeLX import Devs
 from RiZoeLX.functions import get_user, get_id
 from SpamX.core import user_errors
 
-@Client.on_message(filters.user(Sudos) & filters.command(["info"], prefixes=handler))
+@Client.on_message(filters.command(["info"], prefixes=handler))
 @Client.on_message(filters.me & filters.command(["info"], prefixes=handler))
 async def _info(SpamX: Client, e: Message):
    try:
