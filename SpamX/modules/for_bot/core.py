@@ -15,7 +15,7 @@ from RiZoeLX import Devs
 from RiZoeLX.functions import get_time, delete_reply, Red7_Watch as oops_watch
 
 
-@Client.on_message(filters.user(Sudos) & filters.command(["ping"], prefixes=handler))
+@Client.on_message(filters.command(["ping"], prefixes=handler))
 async def ping(_, e: Message):       
       start = datetime.datetime.now()
       uptime = await get_time((time.time() - start_time))
